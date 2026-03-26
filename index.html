@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Noneesh BS – Cybersecurity Student | Ethical Hacking | Web Security | Portfolio"/>
+  <title>Noneesh BS | Cybersecurity & Web Security</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Special+Elite&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Share+Tech+Mono&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
+
+  <script>
+    window.GH = {
+      user: 'VIKRAM-N03', repo: 'My-portfolio', branch: 'main',
+      url(file) { return `https://raw.githubusercontent.com/${this.user}/${this.repo}/${this.branch}/images/${file}`; }
+    };
+  </script>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<div class="cur-dot"  id="curDot"></div>
+<div class="cur-ring" id="curRing"></div>
+<div class="grain"    aria-hidden="true"></div>
+<div class="vignette" aria-hidden="true"></div>
+
+<!-- LOADER -->
+<div id="loader" class="loader">
+  <div class="loader-inner">
+    <div class="loader-stamp">
+      <div class="ls-outer"></div>
+      <div class="ls-inner-border"></div>
+      <div class="ls-content">
+        <div class="ls-pre">EST. 2026</div>
+        <div class="ls-monogram">NBS</div>
+        <div class="ls-rule"><span></span><i class="fas fa-shield-alt"></i><span></span></div>
+        <div class="ls-sub">SECURITY PORTFOLIO</div>
+      </div>
+    </div>
+    <div class="loader-progress">
+      <div class="lp-track"><div class="lp-bar" id="loaderBar"></div></div>
+      <div class="lp-status" id="loaderStatus">INITIALIZING SYSTEMS...</div>
+    </div>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <a class="nav-brand" href="#hero">
+    <div class="nb-seal">NBS</div>
+    <div class="nb-divider"></div>
+    <div>
+      <div class="nb-name">NONEESH BS</div>
+      <div class="nb-sub">Security Researcher</div>
+    </div>
+  </a>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-links" id="navLinks">
+    <a href="#hero"     data-l="Home">Home</a>
+    <a href="#about"    data-l="About">About</a>
+    <a href="#skills"   data-l="Skills">Skills</a>
+    <a href="#projects" data-l="Projects">Projects</a>
+    <a href="#contact"  data-l="Contact">Contact</a>
+  </div>
+  <div class="nav-status"><span class="ns-dot"></span><span>ACTIVE</span></div>
+</nav>
+
+<!-- ═══════ HERO ═══════ -->
+<section id="hero" class="hero">
+  <div class="hero-texture" aria-hidden="true"></div>
+  <div class="hero-diag"    aria-hidden="true"></div>
+
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-badge">
+        <span class="hb-line"></span>
+        <span class="hb-text">✦ PORTFOLIO · 2026 · BENGALURU ✦</span>
+        <span class="hb-line"></span>
+      </div>
+
+      <h1 class="hero-name">
+        <span class="hn-top">NONEESH</span>
+        <span class="hn-bot">BS</span>
+      </h1>
+
+      <div class="hero-role-wrap">
+        <span class="hr-deco">〔</span>
+        <span id="roleText" class="hr-text"></span>
+        <span class="hr-cursor">_</span>
+        <span class="hr-deco">〕</span>
+      </div>
+
+      <p class="hero-desc">
+        Securing the web one exploit at a time.<br/>
+        <em>CTF player · Bug hunter · Secure builder.</em>
+      </p>
+
+      <div class="hero-btns">
+        <a href="#projects" class="btn btn-prim"><i class="fas fa-terminal"></i> View Arsenal</a>
+        <a href="#contact"  class="btn btn-sec"><i class="fas fa-satellite-dish"></i> Engage</a>
+        <a href="https://github.com/VIKRAM-N03" target="_blank" class="btn btn-ghost"><i class="fab fa-github"></i> GitHub</a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="hstat">
+          <span class="hstat-n" data-target="3">0</span>
+          <span class="hstat-l">Projects</span>
+        </div>
+        <span class="hstat-sep">✦</span>
+        <div class="hstat">
+          <span class="hstat-n" data-target="3">0</span>
+          <span class="hstat-l">CVEs Studied</span>
+        </div>
+        <span class="hstat-sep">✦</span>
+        <div class="hstat">
+          <span class="hstat-n" data-target="25">0</span>
+          <span class="hstat-l">CTF Flags</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-right" id="heroRight">
+      <div class="av-frame">
+        <div class="av-stamp-ring r1"></div>
+        <div class="av-stamp-ring r2"></div>
+        <div class="av-photo-wrap">
+          <img id="avPhoto" src="" alt="Noneesh BS" class="av-photo"/>
+          <div class="av-fallback"><i class="fas fa-user-secret"></i></div>
+          <div class="av-tint"></div>
+          <div class="av-scan"></div>
+        </div>
+        <div class="av-corner tl"></div>
+        <div class="av-corner tr"></div>
+        <div class="av-corner bl"></div>
+        <div class="av-corner br"></div>
+        <div class="av-ribbon">
+          <span>✦ NONEESH BS ✦ SEC_RESEARCHER ✦ 2026 ✦</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-scroll">
+    <div class="hs-track"><div class="hs-dot"></div></div>
+    <span>SCROLL</span>
+  </div>
+</section>
+
+<!-- ═══════ ABOUT ═══════ -->
+<section id="about" class="section about">
+  <div class="sec-eyebrow"><span></span>01 · MISSION BRIEFING<span></span></div>
+  <h2 class="sec-title">About <em>Me</em></h2>
+
+  <div class="about-grid">
+    <div class="about-photo-col">
+      <div class="ap-wrap" id="apWrap">
+        <img id="apPhoto" src="" alt="Noneesh BS" class="ap-photo"/>
+        <div class="ap-tint"></div>
+        <div class="ap-frame-corner tl"></div>
+        <div class="ap-frame-corner tr"></div>
+        <div class="ap-frame-corner bl"></div>
+        <div class="ap-frame-corner br"></div>
+        <div class="ap-label"><span class="apl-dot"></span><span>NONEESH BS · BENGALURU</span></div>
+      </div>
+    </div>
+
+    <div class="about-term card">
+      <div class="card-hdr">
+        <span class="chd r"></span><span class="chd y"></span><span class="chd g"></span>
+        <span class="ch-ttl">profile.json</span>
+      </div>
+      <div class="ab-code">
+        <p><span class="ck">name</span><span class="ceq"> : </span><span class="cs">"Noneesh BS"</span></p>
+        <p><span class="ck">role</span><span class="ceq"> : </span><span class="cs">"Cybersecurity Student"</span></p>
+        <p><span class="ck">location</span><span class="ceq"> : </span><span class="cs">"Bengaluru, IN"</span></p>
+        <p><span class="ck">focus</span><span class="ceq"> : </span><span class="ca">["ethical hacking","web sec","CTF"]</span></p>
+        <p><span class="ck">available</span><span class="ceq"> : </span><span class="cb">true</span></p>
+        <p><span class="ck">github</span><span class="ceq"> : </span><span class="cs">"VIKRAM-N03"</span></p>
+      </div>
+    </div>
+
+    <div class="about-bio">
+      <p>I'm a cybersecurity student passionate about <strong>ethical hacking</strong>,
+         <strong>web application security</strong>, network defense, and secure development.</p>
+      <p>I enjoy CTFs, bug bounty hunting, building security tools, and learning how attackers
+         think — so I can build systems that survive them.</p>
+      <div class="about-badges">
+        <span class="badge"><i class="fas fa-bug"></i> Bug Bounty</span>
+        <span class="badge"><i class="fas fa-flag"></i> CTF Player</span>
+        <span class="badge"><i class="fas fa-shield-halved"></i> OWASP</span>
+        <span class="badge"><i class="fas fa-code"></i> Secure Dev</span>
+        <span class="badge"><i class="fas fa-network-wired"></i> Net Defense</span>
+      </div>
+      <a href="#contact" class="btn btn-prim" style="margin-top:2rem;display:inline-flex;">
+        <i class="fas fa-paper-plane"></i> Hire Me
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ SKILLS ═══════ -->
+<section id="skills" class="section skills">
+  <div class="sec-eyebrow"><span></span>02 · TOOLSET &amp; ARSENAL<span></span></div>
+  <h2 class="sec-title">Skills &amp; <em>Tools</em></h2>
+
+  <div class="skills-grid">
+    <div class="sk-card card"><div class="skt"><i class="fab fa-python ski"></i><span class="skb">ADV</span></div><h3>Python</h3><p>Automation, scripting, exploit PoCs, tool building</p><div class="skbw"><div class="skbar" data-w="90"></div></div></div>
+    <div class="sk-card card"><div class="skt"><i class="fas fa-terminal ski"></i><span class="skb">ADV</span></div><h3>Kali Linux</h3><p>Metasploit, Nmap, Burp Suite, Wireshark</p><div class="skbw"><div class="skbar" data-w="85"></div></div></div>
+    <div class="sk-card card"><div class="skt"><i class="fas fa-shield-alt ski"></i><span class="skb">ADV</span></div><h3>Web Security</h3><p>OWASP Top 10, SQLi, XSS, CSRF, secure headers</p><div class="skbw"><div class="skbar" data-w="88"></div></div></div>
+    <div class="sk-card card"><div class="skt"><i class="fab fa-js ski"></i><span class="skb">ADV</span></div><h3>JavaScript</h3><p>ES6+, secure coding patterns, XSS prevention</p><div class="skbw"><div class="skbar" data-w="82"></div></div></div>
+    <div class="sk-card card"><div class="skt"><i class="fas fa-server ski"></i><span class="skb">MID</span></div><h3>Node / Express</h3><p>API security, JWT, rate limiting, input validation</p><div class="skbw"><div class="skbar" data-w="76"></div></div></div>
+    <div class="sk-card card"><div class="skt"><i class="fab fa-react ski"></i><span class="skb">MID</span></div><h3>React</h3><p>Secure frontend, CSP, dependency auditing</p><div class="skbw"><div class="skbar" data-w="74"></div></div></div>
+    <div class="sk-card card"><div class="skt"><i class="fas fa-network-wired ski"></i><span class="skb">MID</span></div><h3>Network Security</h3><p>Packet analysis, firewall config, IDS/IPS</p><div class="skbw"><div class="skbar" data-w="72"></div></div></div>
+    <div class="sk-card card"><div class="skt"><i class="fas fa-database ski"></i><span class="skb">MID</span></div><h3>SQL / NoSQL</h3><p>SQLi detection, prepared statements, MongoDB security</p><div class="skbw"><div class="skbar" data-w="70"></div></div></div>
+  </div>
+</section>
+
+<!-- ═══════ PROJECTS ═══════ -->
+<section id="projects" class="section projects">
+  <div class="sec-eyebrow"><span></span>03 · OPERATIONS LOG<span></span></div>
+  <h2 class="sec-title">Featured <em>Projects</em></h2>
+
+  <div class="proj-grid">
+    <article class="proj-card card">
+      <div class="proj-banner">
+        <img class="proj-img gh-img" data-gh="web.png" src="" alt="Vuln Dashboard"/>
+        <div class="proj-fb"><i class="fas fa-spider"></i></div>
+        <div class="proj-overlay"><span class="pnum">№ 01</span><span class="pstatus"><span class="ps-dot"></span>ACTIVE</span></div>
+      </div>
+      <div class="proj-body">
+        <h3>Web Vulnerability Dashboard</h3>
+        <p>Real-time vuln scanner with ZAP API. Detects OWASP Top 10, visualises risk scores with live charts.</p>
+        <div class="proj-tech"><span>Python</span><span>Flask</span><span>OWASP ZAP</span><span>Chart.js</span></div>
+        <div class="proj-links">
+          <a href="https://github.com/VIKRAM-N03" target="_blank"><i class="fab fa-github"></i> Source</a>
+          <a href="#"><i class="fas fa-external-link-alt"></i> Demo</a>
+        </div>
+      </div>
+    </article>
+    <article class="proj-card card">
+      <div class="proj-banner">
+        <img class="proj-img gh-img" data-gh="secure.png" src="" alt="Secure File Uploader"/>
+        <div class="proj-fb"><i class="fas fa-virus-slash"></i></div>
+        <div class="proj-overlay"><span class="pnum">№ 02</span><span class="pstatus"><span class="ps-dot"></span>ACTIVE</span></div>
+      </div>
+      <div class="proj-body">
+        <h3>Secure File Uploader</h3>
+        <p>Upload service with ClamAV scanning, MIME validation, size enforcement, and quarantine logging.</p>
+        <div class="proj-tech"><span>Node.js</span><span>Express</span><span>Multer</span><span>ClamAV</span></div>
+        <div class="proj-links">
+          <a href="https://github.com/VIKRAM-N03" target="_blank"><i class="fab fa-github"></i> Source</a>
+          <a href="#"><i class="fas fa-external-link-alt"></i> Demo</a>
+        </div>
+      </div>
+    </article>
+    <article class="proj-card card">
+      <div class="proj-banner">
+        <img class="proj-img gh-img" data-gh="pass.jpg" src="" alt="Password Analyzer"/>
+        <div class="proj-fb"><i class="fas fa-key"></i></div>
+        <div class="proj-overlay"><span class="pnum">№ 03</span><span class="pstatus"><span class="ps-dot"></span>ACTIVE</span></div>
+      </div>
+      <div class="proj-body">
+        <h3>Password Strength Analyzer</h3>
+        <p>zxcvbn entropy scoring, HaveIBeenPwned API hints, and real-time visual feedback.</p>
+        <div class="proj-tech"><span>React</span><span>Tailwind</span><span>zxcvbn</span><span>HIBP</span></div>
+        <div class="proj-links">
+          <a href="https://github.com/VIKRAM-N03" target="_blank"><i class="fab fa-github"></i> Source</a>
+          <a href="#"><i class="fas fa-external-link-alt"></i> Demo</a>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ═══════ CONTACT ═══════ -->
+<section id="contact" class="section contact">
+  <div class="sec-eyebrow"><span></span>04 · ESTABLISH CONNECTION<span></span></div>
+  <h2 class="sec-title">Get In <em>Touch</em></h2>
+
+  <div class="contact-grid">
+    <div class="ci-card card">
+      <div class="card-hdr">
+        <span class="chd r"></span><span class="chd y"></span><span class="chd g"></span>
+        <span class="ch-ttl">contact.sh</span>
+      </div>
+      <div class="ci-rows">
+        <div class="ci-row"><i class="fas fa-envelope"></i><div><span class="ci-lbl">EMAIL</span><a href="mailto:vr5668503@gmail.com">vr5668503@gmail.com</a></div></div>
+        <div class="ci-row"><i class="fas fa-phone"></i><div><span class="ci-lbl">PHONE</span><a href="tel:+919535251215">+91 95352 51215</a></div></div>
+        <div class="ci-row"><i class="fas fa-location-dot"></i><div><span class="ci-lbl">LOCATION</span><span>Bengaluru, Karnataka, IN</span></div></div>
+      </div>
+      <div class="ci-socials">
+        <a href="https://github.com/VIKRAM-N03" target="_blank" class="cs-btn"><i class="fab fa-github"></i> GitHub</a>
+        <a href="https://linkedin.com/in/vikram-ccs" target="_blank" class="cs-btn"><i class="fab fa-linkedin"></i> LinkedIn</a>
+      </div>
+    </div>
+
+    <div class="cf-card card">
+      <div class="card-hdr">
+        <span class="chd r"></span><span class="chd y"></span><span class="chd g"></span>
+        <span class="ch-ttl">send_message.sh</span>
+      </div>
+      <form id="contactForm" class="cf-form" novalidate>
+        <div class="cf-row2">
+          <div class="cf-field"><label for="cfName">Name</label><input id="cfName" type="text" placeholder="Your name" autocomplete="off"/></div>
+          <div class="cf-field"><label for="cfEmail">Email</label><input id="cfEmail" type="email" placeholder="your@email.com" autocomplete="off"/></div>
+        </div>
+        <div class="cf-field"><label for="cfSubject">Subject</label><input id="cfSubject" type="text" placeholder="Internship / Collab / Bug Bounty…" autocomplete="off"/></div>
+        <div class="cf-field"><label for="cfMsg">Message</label><textarea id="cfMsg" rows="5" placeholder="Tell me what's on your mind…"></textarea></div>
+        <button type="submit" class="btn btn-prim cf-submit"><i class="fas fa-paper-plane"></i> Send Message</button>
+        <p class="cf-note"><i class="fas fa-shield-alt"></i> Your data is never stored or shared.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="f-ornament">✦ ─── ✦ ─── ✦</div>
+    <div class="f-monogram">NBS</div>
+    <p>© 2026 Noneesh BS &nbsp;·&nbsp; Built with security in mind</p>
+    <div class="f-links">
+      <a href="https://github.com/VIKRAM-N03" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://linkedin.com/in/vikram-ccs" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="mailto:vr5668503@gmail.com"><i class="fas fa-envelope"></i></a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
