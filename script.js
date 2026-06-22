@@ -18,21 +18,18 @@ document.addEventListener('DOMContentLoaded', () => {
     p.src = GH.url(file);
   }
 
-  // Hero avatar
   const avPhoto = document.getElementById('avPhoto');
   ghLoad(avPhoto, 'profile1.png', el => {
     const fallback = document.querySelector('.av-fallback');
     if (fallback) fallback.style.display = 'none';
   });
 
-  // About photo
   const apPhoto = document.getElementById('apPhoto');
   ghLoad(apPhoto, 'profile1.png', el => {
     const wrap = document.getElementById('apWrap');
     if (wrap) wrap.classList.add('loaded');
   });
 
-  // Project images
   document.querySelectorAll('.gh-img').forEach(img => {
     ghLoad(img, img.dataset.gh, () => {});
   });
@@ -67,10 +64,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   /* ══════════════════════════════════════════════════════════
-     LOADER — vintage stamp progress bar
+     LOADER
   ══════════════════════════════════════════════════════════ */
-  const loader      = document.getElementById('loader');
-  const loaderBar   = document.getElementById('loaderBar');
+  const loader       = document.getElementById('loader');
+  const loaderBar    = document.getElementById('loaderBar');
   const loaderStatus = document.getElementById('loaderStatus');
 
   const STATUSES = [
@@ -105,7 +102,11 @@ document.addEventListener('DOMContentLoaded', () => {
   function hideLoader() {
     gsap.to(loader, {
       opacity: 0, duration: 0.9, ease: 'power2.inOut',
-      onComplete: () => { loader.style.display = 'none'; kickAnimations(); }
+      onComplete: () => {
+        loader.style.display = 'none';
+        kickAnimations();
+        initTimelineAnimations();
+      }
     });
   }
 
@@ -141,11 +142,8 @@ document.addEventListener('DOMContentLoaded', () => {
      GSAP ANIMATIONS
   ══════════════════════════════════════════════════════════ */
   function kickAnimations() {
-
-    // Navbar
     gsap.from('.navbar', { y: -70, opacity: 0, duration: 1, ease: 'power3.out' });
 
-    // Hero
     gsap.from('.hero-badge',    { opacity: 0, x: -20, duration: 0.8, delay: 0.2 });
     gsap.from('.hn-top',        { y: 80, opacity: 0, duration: 1.2, delay: 0.4, ease: 'power4.out' });
     gsap.from('.hn-bot',        { y: 60, opacity: 0, duration: 1.2, delay: 0.6, ease: 'power4.out' });
@@ -156,7 +154,6 @@ document.addEventListener('DOMContentLoaded', () => {
     gsap.from('.av-frame',      { opacity: 0, scale: 0.9, duration: 1.2, delay: 0.5, ease: 'power3.out' });
     gsap.from('.hero-scroll',   { opacity: 0, duration: 1.2, delay: 2.0 });
 
-    // Scroll-triggered cards
     gsap.utils.toArray('.card').forEach((el, i) => {
       gsap.from(el, {
         scrollTrigger: { trigger: el, start: 'top 88%', toggleActions: 'play none none reverse' },
@@ -164,7 +161,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    // Section titles + eyebrows
     gsap.utils.toArray('.sec-title').forEach(el => {
       gsap.from(el, {
         scrollTrigger: { trigger: el, start: 'top 88%' },
@@ -178,7 +174,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    // Skill bars
     document.querySelectorAll('.skbar').forEach(bar => {
       const w = bar.dataset.w + '%';
       ScrollTrigger.create({
@@ -187,7 +182,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    // Stat counters
     document.querySelectorAll('.hstat-n').forEach(el => {
       const end = +el.dataset.target;
       ScrollTrigger.create({
@@ -201,10 +195,35 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    // About photo
     gsap.from('.ap-wrap.loaded', {
       scrollTrigger: { trigger: '#about', start: 'top 80%' },
       opacity: 0, x: -25, duration: 1, ease: 'power3.out'
+    });
+  }
+
+  /* ══════════════════════════════════════════════════════════
+     TIMELINE ANIMATIONS
+  ══════════════════════════════════════════════════════════ */
+  function initTimelineAnimations() {
+    gsap.utils.toArray('.tl-item').forEach((el, i) => {
+      gsap.from(el, {
+        scrollTrigger: { trigger: el, start: 'top 90%', toggleActions: 'play none none reverse' },
+        x: -24, opacity: 0, duration: 0.75, delay: i * 0.07, ease: 'power3.out'
+      });
+    });
+
+    gsap.utils.toArray('.cert-card').forEach((el, i) => {
+      gsap.from(el, {
+        scrollTrigger: { trigger: el, start: 'top 92%', toggleActions: 'play none none reverse' },
+        y: 24, opacity: 0, duration: 0.7, delay: i * 0.08, ease: 'power3.out'
+      });
+    });
+
+    gsap.utils.toArray('.timeline-col-label').forEach(el => {
+      gsap.from(el, {
+        scrollTrigger: { trigger: el, start: 'top 90%' },
+        opacity: 0, x: -14, duration: 0.6, ease: 'power2.out'
+      });
     });
   }
 
@@ -255,7 +274,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   /* ══════════════════════════════════════════════════════════
-     CONTACT FORM
+     CONTACT FORM  — sends to ld620190@gmail.com
   ══════════════════════════════════════════════════════════ */
   const form = document.getElementById('contactForm');
   if (form) {
@@ -268,20 +287,50 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!name || !email || !msg) { alert('Please fill in name, email, and message.'); return; }
       const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${msg}`);
       const sub  = encodeURIComponent(subject || 'Portfolio Contact');
-      window.location.href = `mailto:vr5668503@gmail.com?subject=${sub}&body=${body}`;
+      window.location.href = `mailto:ld620190@gmail.com?subject=${sub}&body=${body}`;
     });
   }
+
 
   /* ══════════════════════════════════════════════════════════
      NAVBAR SCROLL SHADOW
   ══════════════════════════════════════════════════════════ */
+  const nb = document.getElementById('navbar');
+
+  /* ══════════════════════════════════════════════════════════
+     SCROLL PROGRESS BAR
+  ══════════════════════════════════════════════════════════ */
+  const scrollBar = document.getElementById('scroll-progress');
+
   window.addEventListener('scroll', () => {
-    const nb = document.getElementById('navbar');
-    if (window.scrollY > 40) {
-      nb.style.boxShadow = '0 4px 30px rgba(0,0,0,0.5)';
-    } else {
-      nb.style.boxShadow = 'none';
+    // navbar shadow
+    nb.style.boxShadow = window.scrollY > 40 ? '0 4px 30px rgba(0,0,0,0.5)' : 'none';
+
+    // progress bar
+    if (scrollBar) {
+      const scrollTop  = window.scrollY;
+      const docHeight  = document.documentElement.scrollHeight - window.innerHeight;
+      const pct        = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      scrollBar.style.width = pct + '%';
     }
-  });
+
+    // back to top visibility
+    if (btt) {
+      btt.classList.toggle('visible', window.scrollY > 500);
+    }
+  }, { passive: true });
+
+
+  /* ══════════════════════════════════════════════════════════
+     BACK TO TOP
+  ══════════════════════════════════════════════════════════ */
+  const btt = document.getElementById('back-to-top');
+  if (btt) {
+    btt.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    btt.addEventListener('mouseenter', () => ring.classList.add('active'));
+    btt.addEventListener('mouseleave', () => ring.classList.remove('active'));
+  }
 
 });
