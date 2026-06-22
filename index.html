@@ -24,6 +24,7 @@
 </head>
 <body>
 
+<div id="scroll-progress"></div>
 <div class="cur-dot"  id="curDot"></div>
 <div class="cur-ring" id="curRing"></div>
 <div class="grain"    aria-hidden="true"></div>
@@ -67,6 +68,7 @@
     <a href="#about"    data-l="About">About</a>
     <a href="#skills"   data-l="Skills">Skills</a>
     <a href="#projects" data-l="Projects">Projects</a>
+    <a href="#journey"  data-l="Journey">Journey</a>
     <a href="#contact"  data-l="Contact">Contact</a>
   </div>
   <div class="nav-status"><span class="ns-dot"></span><span>ACTIVE</span></div>
@@ -278,9 +280,128 @@
   </div>
 </section>
 
+<!-- ═══════ JOURNEY ═══════ -->
+<section id="journey" class="section journey">
+  <div class="sec-eyebrow"><span></span>04 · MISSION HISTORY<span></span></div>
+  <h2 class="sec-title">Journey &amp; <em>Credentials</em></h2>
+
+  <div class="timeline-grid">
+    <div>
+      <div class="timeline-col-label">
+        <i class="fas fa-graduation-cap"></i>
+        Education
+      </div>
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-date">2022 – Present</div>
+          <div class="tl-title">B.E. Computer Science</div>
+          <div class="tl-org">University · Bengaluru, IN</div>
+          <div class="tl-desc">Specialising in Cybersecurity. Core coursework: Network Security, Cryptography, Operating Systems, Secure Software Engineering.</div>
+          <div class="tl-tags">
+            <span class="tl-tag">Cryptography</span>
+            <span class="tl-tag">Network Security</span>
+            <span class="tl-tag">OS Security</span>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-date">2020 – 2022</div>
+          <div class="tl-title">Pre-University (PCM + CS)</div>
+          <div class="tl-org">Board · Bengaluru, IN</div>
+          <div class="tl-desc">Physics, Chemistry, Mathematics, Computer Science. First self-taught Python scripts for network automation — the spark.</div>
+          <div class="tl-tags">
+            <span class="tl-tag">Python</span>
+            <span class="tl-tag">C++</span>
+            <span class="tl-tag">Linux basics</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="timeline-col-label">
+        <i class="fas fa-shield-alt"></i>
+        Experience &amp; CTF
+      </div>
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-date">2024 – Present</div>
+          <div class="tl-title">Bug Bounty Researcher</div>
+          <div class="tl-org">Independent · Remote</div>
+          <div class="tl-desc">Hunting vulnerabilities across public bug bounty programs. Focus on web app targets: XSS, IDOR, auth bypasses, and SSRF chains.</div>
+          <div class="tl-tags">
+            <span class="tl-tag">Burp Suite</span>
+            <span class="tl-tag">OWASP Top 10</span>
+            <span class="tl-tag">Recon</span>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-date">2023 – Present</div>
+          <div class="tl-title">CTF Competitor</div>
+          <div class="tl-org">HackTheBox · TryHackMe · PicoCTF</div>
+          <div class="tl-desc">25+ flags captured across web exploitation, reverse engineering, forensics, and cryptography categories. Active on HTB and THM.</div>
+          <div class="tl-tags">
+            <span class="tl-tag">Web Exploitation</span>
+            <span class="tl-tag">Rev Eng</span>
+            <span class="tl-tag">Forensics</span>
+            <span class="tl-tag">Crypto</span>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-date">2023</div>
+          <div class="tl-title">Secure Developer</div>
+          <div class="tl-org">Personal Projects · GitHub</div>
+          <div class="tl-desc">Built security-first tools: vulnerability dashboard, file upload scanner, and password analyser — each with documented threat models.</div>
+          <div class="tl-tags">
+            <span class="tl-tag">Python</span>
+            <span class="tl-tag">Node.js</span>
+            <span class="tl-tag">React</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top: 4rem;">
+    <div class="sec-eyebrow" style="margin-bottom: 1.5rem;"><span></span>CREDENTIALS &amp; PLATFORMS<span></span></div>
+    <div class="cert-grid">
+      <div class="cert-card">
+        <i class="fas fa-cube cert-icon"></i>
+        <div class="cert-name">TryHackMe</div>
+        <div class="cert-issuer">PLATFORM RANK · TOP 10%</div>
+        <span class="cert-status"><span class="cert-status-dot"></span>ACTIVE</span>
+      </div>
+      <div class="cert-card">
+        <i class="fas fa-box cert-icon"></i>
+        <div class="cert-name">Hack The Box</div>
+        <div class="cert-issuer">PROLABS IN PROGRESS</div>
+        <span class="cert-status"><span class="cert-status-dot"></span>ACTIVE</span>
+      </div>
+      <div class="cert-card">
+        <i class="fas fa-shield-alt cert-icon"></i>
+        <div class="cert-name">OWASP</div>
+        <div class="cert-issuer">TOP 10 PRACTITIONER</div>
+        <span class="cert-status"><span class="cert-status-dot"></span>VERIFIED</span>
+      </div>
+      <div class="cert-card">
+        <i class="fas fa-terminal cert-icon"></i>
+        <div class="cert-name">CEH v12</div>
+        <div class="cert-issuer">EC-COUNCIL · STUDYING</div>
+        <span class="cert-status" style="color:var(--amber-lt);">
+          <span class="cert-status-dot" style="background:var(--amber-lt);box-shadow:0 0 5px var(--amber);"></span>IN PROGRESS
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ═══════ CONTACT ═══════ -->
 <section id="contact" class="section contact">
-  <div class="sec-eyebrow"><span></span>04 · ESTABLISH CONNECTION<span></span></div>
+  <div class="sec-eyebrow"><span></span>05 · ESTABLISH CONNECTION<span></span></div>
   <h2 class="sec-title">Get In <em>Touch</em></h2>
 
   <div class="contact-grid">
@@ -324,7 +445,7 @@
   <div class="footer-inner">
     <div class="f-ornament">✦ ─── ✦ ─── ✦</div>
     <div class="f-monogram">NBS</div>
-    <p>©  Noneesh BS &nbsp;·&nbsp; Built with security in mind</p>
+    <p>© Noneesh BS &nbsp;·&nbsp; Built with security in mind</p>
     <div class="f-links">
       <a href="https://github.com/Noneesh" target="_blank"><i class="fab fa-github"></i></a>
       <a href="https://l1nk.dev/lj351il" target="_blank"><i class="fab fa-linkedin"></i></a>
@@ -332,6 +453,10 @@
     </div>
   </div>
 </footer>
+
+<button id="back-to-top" aria-label="Back to top">
+  <i class="fas fa-chevron-up"></i>
+</button>
 
 <script src="script.js"></script>
 </body>
