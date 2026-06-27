@@ -579,6 +579,80 @@ body {
 .cert-status { display: inline-flex; align-items: center; gap: 0.4rem; font-family: var(--type); font-size: 0.58rem; letter-spacing: 1.5px; color: var(--red-lt); }
 .cert-status-dot { width: 5px; height: 5px; background: var(--red-lt); border-radius: 50%; box-shadow: 0 0 5px var(--red); animation: pulse 2s infinite; }
 
+.cert-clickable { cursor: none; }
+.cert-view {
+  display: flex; align-items: center; gap: 0.4rem;
+  margin-top: 0.9rem; padding-top: 0.8rem;
+  border-top: 1px dashed var(--border);
+  font-family: var(--type); font-size: 0.62rem; letter-spacing: 1.5px;
+  color: var(--amber-lt); opacity: 0; transform: translateY(4px);
+  transition: opacity .25s, transform .25s;
+}
+.cert-clickable:hover .cert-view { opacity: 1; transform: translateY(0); }
+.cert-view i { font-size: 0.7rem; }
+
+/* ═══════════════════════════════════════
+   CERTIFICATE LIGHTBOX MODAL
+═══════════════════════════════════════ */
+.cert-modal {
+  position: fixed; inset: 0; z-index: 9995;
+  display: flex; align-items: center; justify-content: center;
+  padding: 2rem;
+  opacity: 0; visibility: hidden;
+  transition: opacity .3s var(--ease), visibility .3s var(--ease);
+}
+.cert-modal.open { opacity: 1; visibility: visible; }
+.cert-modal-backdrop {
+  position: absolute; inset: 0;
+  background: rgba(5,2,1,0.88);
+  backdrop-filter: blur(6px);
+}
+.cert-modal-inner {
+  position: relative; z-index: 1;
+  width: 100%; max-width: 880px; max-height: 90vh;
+  display: flex; flex-direction: column;
+  background: linear-gradient(145deg, rgba(28,10,7,0.97), rgba(15,7,5,0.98));
+  border: 1px solid var(--border-lt);
+  border-radius: 6px;
+  box-shadow: 0 0 60px rgba(192,57,43,0.18), 0 30px 80px rgba(0,0,0,0.6);
+  transform: scale(0.94) translateY(10px);
+  transition: transform .35s var(--ease);
+  overflow: hidden;
+}
+.cert-modal.open .cert-modal-inner { transform: scale(1) translateY(0); }
+.cert-modal-head {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.1rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+  background: rgba(192,57,43,0.05);
+}
+.cert-modal-title {
+  font-family: var(--disp); font-weight: 700; font-size: 1.05rem;
+  color: var(--parchment);
+}
+.cert-modal-close {
+  background: none; border: 1px solid var(--border); border-radius: 50%;
+  width: 32px; height: 32px; color: var(--ink-lt); cursor: none;
+  display: flex; align-items: center; justify-content: center;
+  transition: .2s;
+}
+.cert-modal-close:hover { border-color: var(--red-lt); color: var(--red-lt); }
+.cert-modal-body {
+  flex: 1; overflow: auto; padding: 1.5rem;
+  display: flex; align-items: center; justify-content: center;
+  background: repeating-linear-gradient(45deg, rgba(192,57,43,0.015) 0, rgba(192,57,43,0.015) 1px, transparent 1px, transparent 18px), var(--bg2);
+}
+.cert-modal-body img {
+  max-width: 100%; max-height: 65vh; object-fit: contain;
+  border-radius: 3px; box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+}
+.cert-modal-foot {
+  display: flex; gap: 1rem; flex-wrap: wrap;
+  padding: 1.2rem 1.5rem;
+  border-top: 1px solid var(--border);
+  background: rgba(192,57,43,0.03);
+}
+
 /* ═══════════════════════════════════════
    SCROLL PROGRESS BAR
 ═══════════════════════════════════════ */
@@ -702,6 +776,9 @@ body {
   .hn-top { font-size: clamp(3.5rem, 14vw, 5rem); }
   .hn-bot { font-size: clamp(2rem, 9vw, 3rem); }
   #back-to-top { bottom: 1.5rem; right: 1.5rem; }
+  .cert-modal { padding: 1rem; }
+  .cert-modal-foot { flex-direction: column; }
+  .cert-modal-foot .btn { justify-content: center; width: 100%; }
 }
 @media (max-width: 480px) {
   .skills-grid { grid-template-columns: 1fr; }
