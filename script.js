@@ -106,7 +106,6 @@ document.addEventListener('DOMContentLoaded', () => {
         loader.style.display = 'none';
         kickAnimations();
         initTimelineAnimations();
-        initCertAnimations();
       }
     });
   }
@@ -227,19 +226,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
-
-  /* ══════════════════════════════════════════════════════════
-     CERTIFICATIONS SECTION ANIMATIONS
-  ══════════════════════════════════════════════════════════ */
-  function initCertAnimations() {
-    gsap.utils.toArray('.certx-card').forEach((el, i) => {
-      gsap.from(el, {
-        scrollTrigger: { trigger: el, start: 'top 90%', toggleActions: 'play none none reverse' },
-        y: 36, opacity: 0, duration: 0.8, delay: i * 0.06, ease: 'power3.out'
-      });
-    });
-  }
-
 
   /* ══════════════════════════════════════════════════════════
      ACTIVE NAV
