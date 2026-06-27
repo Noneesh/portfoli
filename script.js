@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
     requestAnimationFrame(animRing);
   })();
 
-  document.querySelectorAll('a, button').forEach(el => {
+  document.querySelectorAll('a, button, .cert-clickable').forEach(el => {
     el.addEventListener('mouseenter', () => ring.classList.add('active'));
     el.addEventListener('mouseleave', () => ring.classList.remove('active'));
   });
@@ -226,6 +226,55 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+
+  /* ══════════════════════════════════════════════════════════
+     CERTIFICATE LIGHTBOX MODAL
+  ══════════════════════════════════════════════════════════ */
+  const certModal        = document.getElementById('certModal');
+  const certModalBackdrop= document.getElementById('certModalBackdrop');
+  const certModalClose   = document.getElementById('certModalClose');
+  const certModalImg     = document.getElementById('certModalImg');
+  const certModalTitle   = document.getElementById('certModalTitle');
+  const certModalDownload= document.getElementById('certModalDownload');
+  const certModalOpen    = document.getElementById('certModalOpen');
+
+  function openCertModal(imgUrl, title, fileName) {
+    if (!certModal) return;
+    certModalImg.src = imgUrl;
+    certModalImg.alt = title;
+    certModalTitle.textContent = title;
+    certModalDownload.href = imgUrl;
+    certModalDownload.setAttribute('download', fileName || 'certificate.jpg');
+    certModalOpen.href = imgUrl;
+    certModal.classList.add('open');
+    certModal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeCertModal() {
+    if (!certModal) return;
+    certModal.classList.remove('open');
+    certModal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('.cert-clickable').forEach(card => {
+    card.addEventListener('click', () => {
+      const key = card.dataset.certKey;
+      const imgUrl = (typeof CERT_IMAGES !== 'undefined' && CERT_IMAGES[key]) ? CERT_IMAGES[key] : '';
+      if (!imgUrl) { console.warn('No embedded certificate found for key:', key); return; }
+      const title = card.dataset.certTitle || 'Certificate';
+      const fileName = `${key}-certificate.jpg`;
+      openCertModal(imgUrl, title, fileName);
+    });
+  });
+
+  if (certModalClose)    certModalClose.addEventListener('click', closeCertModal);
+  if (certModalBackdrop) certModalBackdrop.addEventListener('click', closeCertModal);
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && certModal && certModal.classList.contains('open')) closeCertModal();
+  });
+
 
   /* ══════════════════════════════════════════════════════════
      ACTIVE NAV
