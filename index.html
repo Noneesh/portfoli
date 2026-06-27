@@ -406,35 +406,40 @@
   <h2 class="sec-title">Certifications &amp; <em>Badges</em></h2>
 
   <div class="cert-grid">
-    <div class="cert-card">
+    <div class="cert-card cert-clickable" data-cert-key="infosys" data-cert-title="Cybersecurity — Infosys Springboard">
       <i class="fas fa-graduation-cap cert-icon"></i>
       <div class="cert-name">Cybersecurity</div>
       <div class="cert-issuer">INFOSYS SPRINGBOARD · JUN 23, 2025</div>
       <span class="cert-status"><span class="cert-status-dot"></span>VERIFIED</span>
+      <span class="cert-view"><i class="fas fa-eye"></i> View Certificate</span>
     </div>
-    <div class="cert-card">
+    <div class="cert-card cert-clickable" data-cert-key="cyseck" data-cert-title="Cybersecurity MOOC — CySecK">
       <i class="fas fa-shield-halved cert-icon"></i>
       <div class="cert-name">Cybersecurity MOOC</div>
       <div class="cert-issuer">CYSECK · KARNATAKA · CBMOOC1991</div>
       <span class="cert-status"><span class="cert-status-dot"></span>VERIFIED</span>
+      <span class="cert-view"><i class="fas fa-eye"></i> View Certificate</span>
     </div>
-    <div class="cert-card">
+    <div class="cert-card cert-clickable" data-cert-key="ibm" data-cert-title="Cybersecurity Fundamentals — IBM SkillsBuild">
       <i class="fab fa-ibm cert-icon"></i>
       <div class="cert-name">Cybersecurity Fundamentals</div>
       <div class="cert-issuer">IBM SKILLSBUILD · JUN 26, 2026</div>
       <span class="cert-status"><span class="cert-status-dot"></span>VERIFIED</span>
+      <span class="cert-view"><i class="fas fa-eye"></i> View Certificate</span>
     </div>
-    <div class="cert-card">
+    <div class="cert-card cert-clickable" data-cert-key="oracle" data-cert-title="OCI Data Science Professional — Oracle University">
       <i class="fas fa-database cert-icon"></i>
       <div class="cert-name">OCI Data Science Professional</div>
       <div class="cert-issuer">ORACLE UNIVERSITY · VALID TO 2027</div>
       <span class="cert-status"><span class="cert-status-dot"></span>VERIFIED</span>
+      <span class="cert-view"><i class="fas fa-eye"></i> View Certificate</span>
     </div>
-    <div class="cert-card">
+    <div class="cert-card cert-clickable" data-cert-key="scaler" data-cert-title="Python for Beginners — Scaler Topics">
       <i class="fab fa-python cert-icon"></i>
       <div class="cert-name">Python for Beginners</div>
       <div class="cert-issuer">SCALER TOPICS · APR 16, 2025</div>
       <span class="cert-status"><span class="cert-status-dot"></span>VERIFIED</span>
+      <span class="cert-view"><i class="fas fa-eye"></i> View Certificate</span>
     </div>
   </div>
 </section>
@@ -498,6 +503,25 @@
   <i class="fas fa-chevron-up"></i>
 </button>
 
+<!-- ═══════ CERTIFICATE LIGHTBOX MODAL ═══════ -->
+<div id="certModal" class="cert-modal" aria-hidden="true">
+  <div class="cert-modal-backdrop" id="certModalBackdrop"></div>
+  <div class="cert-modal-inner">
+    <div class="cert-modal-head">
+      <span id="certModalTitle" class="cert-modal-title"></span>
+      <button class="cert-modal-close" id="certModalClose" aria-label="Close"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="cert-modal-body">
+      <img id="certModalImg" src="" alt="Certificate"/>
+    </div>
+    <div class="cert-modal-foot">
+      <a id="certModalDownload" href="#" download class="btn btn-prim"><i class="fas fa-download"></i> Download Certificate</a>
+      <a id="certModalOpen" href="#" target="_blank" class="btn btn-ghost"><i class="fas fa-up-right-from-square"></i> Open Full Size</a>
+    </div>
+  </div>
+</div>
+
+<script src="cert-data.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
