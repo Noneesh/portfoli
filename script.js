@@ -260,11 +260,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.querySelectorAll('.cert-clickable').forEach(card => {
     card.addEventListener('click', () => {
-      const key = card.dataset.certKey;
-      const imgUrl = (typeof CERT_IMAGES !== 'undefined' && CERT_IMAGES[key]) ? CERT_IMAGES[key] : '';
-      if (!imgUrl) { console.warn('No embedded certificate found for key:', key); return; }
+      const imgUrl = card.dataset.certImg;
       const title = card.dataset.certTitle || 'Certificate';
-      const fileName = `${key}-certificate.jpg`;
+      const fileName = card.dataset.certFile || 'certificate.jpg';
       openCertModal(imgUrl, title, fileName);
     });
   });
